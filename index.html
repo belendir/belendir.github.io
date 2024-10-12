@@ -94,11 +94,14 @@
         .profile-picture {
             border: 5px solid white; /* White frame */
             border-radius: 50%; /* Circular frame */
-            width: 150px;
-            height: 150px; /* Ensure height matches width for a circle */
+            width: 160px; /* Increased width for a wider appearance */
+            height: 160px; /* Ensure height matches width for a circle */
         }
         .sidebar:hover {
             display: block; /* Show sidebar on hover */
+        }
+        .menu-icon:hover + .sidebar {
+            display: block; /* Show sidebar when hovering over menu icon */
         }
     </style>
 </head>
@@ -135,7 +138,7 @@
     <section id="education">
         <div class="section-title">Education</div>
         <div class="section-content">
-            <p><strong>Master's Degree (2022 - 2024 December)</strong>: Middle East Technical University, English Language Teaching, CGPA: 3.93/4.00</p>
+            <p><strong>Master's Degree (2022 - 2024 expected)</strong>: Middle East Technical University, English Language Teaching, CGPA: 3.93/4.00</p>
             <p><strong>Bachelor's Degree (2018 - 2022)</strong>: Middle East Technical University, Foreign Language Education, CGPA: 3.95/4.00</p>
         </div>
     </section>
@@ -179,11 +182,11 @@
     </section>
 
     <section id="Languages">
-        <div class="section-title">Languages </div>
+        <div class="section-title">Languages</div>
         <div class="section-content">
             <ul>
                 <li>Mother tongue: Turkish
-                    Other Languages: English (Advanced), Albanian (Merit Language), Italian (Intermediate) </li>
+                    Other Languages: English (Advanced), Albanian (Merit Language), Italian (Intermediate)</li>
             </ul>
         </div>
     </section>

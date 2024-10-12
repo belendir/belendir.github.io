@@ -13,7 +13,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #343a40;
+            background-color: #001f3f; /* Changed to navy blue */
             color: white;
             padding: 20px;
             text-align: center;
@@ -41,7 +41,7 @@
             left: 0;
             width: 200px;
             height: 100%;
-            background-color: #282c34;
+            background-color: #001f3f; /* Changed to navy blue */
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
         }
@@ -58,16 +58,18 @@
         }
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #343a40;
+            padding: 5px; /* Reduced padding */
+            background-color: #001f3f; /* Changed to navy blue */
             color: white;
-            position: fixed;
-            bottom: 0;
+            position: relative; /* Changed to relative */
+            bottom: 0; /* Optional, may not be needed */
             width: 100%;
+            font-size: 0.9em; /* Reduced font size */
         }
         .main {
             margin-left: 220px;
             padding: 20px;
+            padding-bottom: 60px; /* Added padding to avoid content being hidden behind the footer */
         }
         .project {
             background-color: white;

@@ -44,7 +44,7 @@
             background-color: #001f3f; /* Changed to navy blue */
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: width 0.3s; /* Added transition for width */
+            display: none; /* Initially hidden */
         }
         .sidebar a {
             display: block;
@@ -84,52 +84,52 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
         }
-
-        /* Media Queries for Responsive Design */
-        @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 150px; /* Adjust sidebar width for smaller screens */
-            }
-            .main {
-                margin-left: 170px; /* Adjust main content margin */
-                padding: 10px; /* Reduce padding */
-            }
-            .section-title {
-                font-size: 1.5em; /* Reduce title size */
-            }
-            .section-content {
-                font-size: 1em; /* Reduce content size */
-            }
-            header {
-                padding: 15px; /* Reduce header padding */
-            }
-            footer {
-                font-size: 0.8em; /* Adjust footer size */
-            }
+        /* Profile picture */
+        .profile-picture {
+            border-radius: 50%;
+            width: 250px; /* Width set to 250px */
+            height: auto; /* Height set to auto for aspect ratio */
+            border: 5px solid white; /* White frame */
+            margin-top: 10px; /* Optional: Margin above the profile picture */
         }
-
-        @media screen and (max-width: 480px) {
+        /* Menu button */
+        .menu-button {
+            cursor: pointer;
+            font-size: 2em; /* Larger font size for the menu icon */
+            color: white; /* Icon color */
+            position: absolute;
+            top: 20px; /* Position at the top */
+            left: 20px; /* Position at the left */
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
             .sidebar {
-                width: 120px; /* Further adjust sidebar width */
+                display: none; /* Keep sidebar hidden initially */
+                width: 100%; /* Full width on mobile */
+                height: auto; /* Auto height */
             }
             .main {
-                margin-left: 140px; /* Further adjust main content margin */
-                padding: 5px; /* Further reduce padding */
+                margin-left: 0; /* Remove left margin on mobile */
             }
-            .section-title {
-                font-size: 1.2em; /* Further reduce title size */
-            }
-            .section-content {
-                font-size: 0.9em; /* Further reduce content size */
-            }
-            header {
-                padding: 10px; /* Further reduce header padding */
-            }
-            footer {
-                font-size: 0.7em; /* Further adjust footer size */
+            .menu-button {
+                left: 10px; /* Adjust menu button position */
+                top: 10px; /* Adjust menu button position */
             }
         }
     </style>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'none'; // Hide sidebar when clicking outside
+            }
+        };
+    </script>
 </head>
 <body>
 
@@ -137,8 +137,10 @@
     <h1>Zeynep Belendir</h1>
     <h2>Researcher - Cognitive Science</h2>
     <p>Focused on Procedural Memory and Morphological Impairments in OCD</p>
-    <img src="porto.png" alt="Profile Picture" class="profile-picture" style="width: 250px; height: auto;">
+    <img src="porto.png" alt="Profile Picture" class="profile-picture">
 </header>
+
+<div class="menu-button" onclick="toggleSidebar()">☰</div> <!-- Menu button -->
 
 <div class="sidebar">
     <a href="#about">About Me</a>
@@ -200,6 +202,17 @@
             <ul>
                 <li><a href="https://blog.metu.edu.tr/laproc/" target="_blank">Morphological Processing Research Group</a></li>
                 <li><a href="https://langcog.metu.edu.tr/" target="_blank">METU Language and Cognitive Development Laboratory</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="Languages">
+        <div class="section-title">Languages </div>
+        <div class="section-content">
+            <ul>
+                <li>Turkish: Native</li>
+                <li>English: Fluent</li>
+                <li>Spanish: Intermediate</li>
             </ul>
         </div>
     </section>

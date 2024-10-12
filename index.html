@@ -13,7 +13,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #001f3f; /* Changed to navy blue */
+            background-color: #001f3f; /* Navy blue */
             color: white;
             padding: 20px;
             text-align: center;
@@ -41,9 +41,10 @@
             left: 0;
             width: 200px;
             height: 100%;
-            background-color: #001f3f; /* Changed to navy blue */
+            background-color: #001f3f; /* Navy blue */
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide sidebar by default */
         }
         .sidebar a {
             display: block;
@@ -59,7 +60,7 @@
         footer {
             text-align: center;
             padding: 5px; /* Reduced padding */
-            background-color: #001f3f; /* Changed to navy blue */
+            background-color: #001f3f; /* Navy blue */
             color: white;
             position: relative; /* Changed to relative */
             bottom: 0; /* Optional, may not be needed */
@@ -83,13 +84,20 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
         }
-        header img {
-            border-radius: 50%; /* Keep the circular shape */
-            width: 150px; /* Adjust as needed */
-            border: 5px solid #007bff; /* Change to your desired border color */
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.5); /* Optional shadow for effect */
+        /* New styles for the profile picture frame */
+        .profile-picture {
+            border: 5px solid white; /* White frame */
+            border-radius: 50%; /* Circular frame */
+            width: 150px;
+            height: 150px; /* Ensure height matches width for a circle */
         }
     </style>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
 
@@ -97,8 +105,11 @@
     <h1>Zeynep Belendir</h1>
     <h2>Researcher - Cognitive Science</h2>
     <p>Focused on Procedural Memory and Morphological Impairments in OCD</p>
-    <img src="porto.png" alt="Profile Picture">
+    <img src="porto.png" alt="Profile Picture" class="profile-picture">
 </header>
+
+<!-- Button to toggle sidebar visibility -->
+<button onclick="toggleSidebar()" style="margin: 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px;">Toggle Menu</button>
 
 <div class="sidebar">
     <a href="#about">About Me</a>
@@ -170,6 +181,7 @@
             <ul>
                 <li>Mother tongue: Turkish
                     Other Languages: English (Advanced), Albanian (Merit Language), Italian (Intermediate) </li>
+            </ul>
         </div>
     </section>
 

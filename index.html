@@ -32,9 +32,6 @@
             color: #007bff;
             text-shadow: 3px 3px 8px rgba(0, 123, 255, 0.3);
         }
-        .section-content {
-            font-size: 1.2em;
-        }
         .sidebar {
             position: fixed;
             top: 0;
@@ -44,7 +41,8 @@
             background-color: #001f3f; /* Navy blue */
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            display: none; /* Hide sidebar by default */
+            display: none; /* Hidden by default */
+            transition: all 0.3s ease;
         }
         .sidebar a {
             display: block;
@@ -56,6 +54,14 @@
         .sidebar a:hover {
             background-color: #007bff;
             padding-left: 20px;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px; /* Size of the menu icon */
+            cursor: pointer;
+            color: white;
         }
         footer {
             text-align: center;
@@ -91,13 +97,10 @@
             width: 150px;
             height: 150px; /* Ensure height matches width for a circle */
         }
-    </style>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
+        .sidebar:hover {
+            display: block; /* Show sidebar on hover */
         }
-    </script>
+    </style>
 </head>
 <body>
 
@@ -108,10 +111,10 @@
     <img src="porto.png" alt="Profile Picture" class="profile-picture">
 </header>
 
-<!-- Button to toggle sidebar visibility -->
-<button onclick="toggleSidebar()" style="margin: 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; padding: 10px;">Toggle Menu</button>
+<!-- Menu icon to show sidebar -->
+<div class="menu-icon" onmouseover="showSidebar()" onmouseout="hideSidebar()">☰</div>
 
-<div class="sidebar">
+<div class="sidebar" onmouseover="showSidebar()" onmouseout="hideSidebar()">
     <a href="#about">About Me</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
@@ -132,7 +135,7 @@
     <section id="education">
         <div class="section-title">Education</div>
         <div class="section-content">
-            <p><strong>Master's Degree (2022 - 2024 expected)</strong>: Middle East Technical University, English Language Teaching, CGPA: 3.93/4.00</p>
+            <p><strong>Master's Degree (2022 - 2024 December)</strong>: Middle East Technical University, English Language Teaching, CGPA: 3.93/4.00</p>
             <p><strong>Bachelor's Degree (2018 - 2022)</strong>: Middle East Technical University, Foreign Language Education, CGPA: 3.95/4.00</p>
         </div>
     </section>

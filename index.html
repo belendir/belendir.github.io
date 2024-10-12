@@ -13,7 +13,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #001f3f; /* Navy blue */
+            background-color: #001f3f; /* Changed to navy blue */
             color: white;
             padding: 20px;
             text-align: center;
@@ -32,17 +32,19 @@
             color: #007bff;
             text-shadow: 3px 3px 8px rgba(0, 123, 255, 0.3);
         }
+        .section-content {
+            font-size: 1.2em;
+        }
         .sidebar {
             position: fixed;
             top: 0;
             left: 0;
             width: 200px;
             height: 100%;
-            background-color: #001f3f; /* Navy blue */
+            background-color: #001f3f; /* Changed to navy blue */
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            display: none; /* Hidden by default */
-            transition: all 0.3s ease;
+            transition: width 0.3s; /* Added transition for width */
         }
         .sidebar a {
             display: block;
@@ -55,18 +57,10 @@
             background-color: #007bff;
             padding-left: 20px;
         }
-        .menu-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 24px; /* Size of the menu icon */
-            cursor: pointer;
-            color: white;
-        }
         footer {
             text-align: center;
             padding: 5px; /* Reduced padding */
-            background-color: #001f3f; /* Navy blue */
+            background-color: #001f3f; /* Changed to navy blue */
             color: white;
             position: relative; /* Changed to relative */
             bottom: 0; /* Optional, may not be needed */
@@ -90,18 +84,50 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 123, 255, 0.2);
         }
-        /* New styles for the profile picture frame */
-        .profile-picture {
-            border: 5px solid white; /* White frame */
-            border-radius: 50%; /* Circular frame */
-            width: 180px; /* Increased width for a wider appearance */
-            height: 180px; /* Ensure height matches width for a circle */
+
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 150px; /* Adjust sidebar width for smaller screens */
+            }
+            .main {
+                margin-left: 170px; /* Adjust main content margin */
+                padding: 10px; /* Reduce padding */
+            }
+            .section-title {
+                font-size: 1.5em; /* Reduce title size */
+            }
+            .section-content {
+                font-size: 1em; /* Reduce content size */
+            }
+            header {
+                padding: 15px; /* Reduce header padding */
+            }
+            footer {
+                font-size: 0.8em; /* Adjust footer size */
+            }
         }
-        .sidebar:hover {
-            display: block; /* Show sidebar on hover */
-        }
-        .menu-icon:hover + .sidebar {
-            display: block; /* Show sidebar when hovering over menu icon */
+
+        @media screen and (max-width: 480px) {
+            .sidebar {
+                width: 120px; /* Further adjust sidebar width */
+            }
+            .main {
+                margin-left: 140px; /* Further adjust main content margin */
+                padding: 5px; /* Further reduce padding */
+            }
+            .section-title {
+                font-size: 1.2em; /* Further reduce title size */
+            }
+            .section-content {
+                font-size: 0.9em; /* Further reduce content size */
+            }
+            header {
+                padding: 10px; /* Further reduce header padding */
+            }
+            footer {
+                font-size: 0.7em; /* Further adjust footer size */
+            }
         }
     </style>
 </head>
@@ -114,10 +140,7 @@
     <img src="porto.png" alt="Profile Picture" class="profile-picture" style="width: 250px; height: auto;">
 </header>
 
-<!-- Menu icon to show sidebar -->
-<div class="menu-icon" onmouseover="showSidebar()" onmouseout="hideSidebar()">☰</div>
-
-<div class="sidebar" onmouseover="showSidebar()" onmouseout="hideSidebar()">
+<div class="sidebar">
     <a href="#about">About Me</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
@@ -181,38 +204,19 @@
         </div>
     </section>
 
-    <section id="Languages">
-        <div class="section-title">Languages</div>
-        <div class="section-content">
-            <ul>
-                <li>Mother tongue: Turkish
-                    Other Languages: English (Advanced), Albanian (Merit Language), Italian (Intermediate)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="cv">
-        <div class="section-title">Curriculum Vitae (CV)</div>
-        <div class="section-content">
-            <p>You can download my current CV from the link below:</p>
-            <p><a href="cv.pdf" target="_blank">Download CV (PDF)</a></p>
-        </div>
-    </section>
-
     <section id="contact">
         <div class="section-title">Contact</div>
         <div class="section-content">
-            <p>Email: <a href="mailto:zeynep.belendir@metu.edu.tr">zeynep.belendir@metu.edu.tr</a></p>
-            <p>GitHub: <a href="https://github.com/belendir/OCD-Morphological-Processing" target="_blank">GitHub</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/zeynep-belendir-9a90671a4" target="_blank">LinkedIn</a></p>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></p>
+            <p>GitHub: <a href="https://github.com/yourprofile" target="_blank">Your GitHub Profile</a></p>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>© 2024 Zeynep Belendir</p>
+    <p>&copy; 2024 Zeynep Belendir. All rights reserved.</p>
 </footer>
 
 </body>
 </html>
-
